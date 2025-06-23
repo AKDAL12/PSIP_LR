@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный CSS сайт</title>
+    
+    <!-- 1. Внешний файл стилей - второй способ подключения CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- 2. Внутренняя таблица стилей - третий способ подключения CSS -->
+    <style>
+        /* Анимация появления - пример свойства анимации (пункт 5.9) */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Применяем анимацию ко всем блокам - селекторы по классу (пункт 3) */
+        .header, .section, .footer {
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+        }
+        
+        /* Задержки для последовательного появления */
+        .header { animation-delay: 0.2s; }
+        .section:nth-child(1) { animation-delay: 0.2s; } /* :nth-child - псевдокласс (пункт 3) */
+        .section:nth-child(2) { animation-delay: 0.25s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.35s; }
+        .footer { animation-delay: 1.2s; }
+    </style>
+    
+    <!-- 3. Импортирование шрифтов - первый способ подключения CSS (импортирование) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Pacifico&display=swap');
+    </style>
+</head>
+<body>
+    <!-- 4. Внутритеговые стили - четвертый способ подключения CSS -->
+    <header class="header" style="background: linear-gradient(to right, #1e90ff, #4169e1); color: white; padding: 20px; text-align: center;">
+        <h1>Учебный сайт по CSS</h1>
+    </header>
+    
+    <div class="container">
+        <section class="section">
+            <h2>1. Способы подключения CSS</h2>
+            <ul class="custom-list">
+                <li>Внешний файл (styles.css)</li>
+                <li>Внутренние стили (тег style)</li>
+                <li>Импортирование (@import)</li>
+                <li>Встроенные стили (атрибут style)</li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h2>2. Селекторы CSS</h2>
+            <div id="selectors-demo">
+                <!-- Универсальный селектор (*) будет в CSS -->
+                <p>Универсальный селектор (*)</p>
+                <!-- Селектор по классу -->
+                <p class="text">Селектор по классу (.text)</p>
+                <!-- Селектор по ID -->
+                <p id="unique-text">Селектор по ID (#unique-text)</p>
+                <div>
+                    <!-- Дочерний селектор -->
+                    <p>Дочерний селектор (div > p)</p>
+                </div>
+                <!-- Селектор по атрибуту -->
+                <p data-example="test">Селектор по атрибуту ([data-example="test"])</p>
+                <p>Первый абзац</p>
+                <!-- Соседний селектор -->
+                <p>Соседний селектор (p + p) - этот абзац стилизован</p>
+                <!-- Псевдокласс :hover -->
+                <p class="hover-demo">Псевдокласс (:hover) - наведи курсор</p>
+                <!-- Псевдоэлемент ::first-letter -->
+                <p class="first-letter">Псевдоэлемент (::first-letter)</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>3. Единицы измерения</h2>
+            <div class="units">
+                <!-- Абсолютные единицы (px) -->
+                <div class="unit-px">10px</div>
+                <!-- Относительные единицы (em) -->
+                <div class="unit-em">2em</div>
+                <!-- Относительные единицы (rem) -->
+                <div class="unit-rem">2rem</div>
+                <!-- Проценты -->
+                <div class="unit-percent">50%</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>4. Свойства CSS</h2>
+            
+            <h3>Шрифты</h3>
+            <!-- Подключенные через @import шрифты -->
+            <p class="font1">Этот текст использует шрифт Roboto Mono</p>
+            <p class="font2">Этот текст использует шрифт Pacifico</p>
+            
+            <h3>Цвета</h3>
+            <div class="colors">
+                <!-- Разные форматы цветов -->
+                <div class="color-hex">HEX (#ff6347)</div>
+                <div class="color-rgb">RGB (rgb(100, 200, 150))</div>
+                <div class="color-hsl">HSL (hsl(240, 100%, 50%))</div>
+                <!-- Градиент -->
+                <div class="color-gradient">Градиент</div>
+            </div>
+            
+            <h3>Текст</h3>
+            <!-- Разные стили текста -->
+            <p class="bold-text">Жирный текст</p>
+            <p class="italic-text">Курсивный текст</p>
+            <p class="underline-text">Подчеркнутый текст</p>
+            <p class="line-through">Перечеркнутый текст</p>
+            
+            <h3>Ссылки</h3>
+            <!-- Стилизация ссылок с :hover -->
+            <a href="#" class="link">Наведи на меня</a>
+            
+            <h3>Изображения</h3>
+            <div class="images">
+                <!-- Оформление изображений -->
+                <img src="Безимени1.jpg" alt="Пример" class="image-rounded">
+                <img src="unnamed.jpg" alt="Пример" class="image-circle">
+            </div>
+            
+            <h3>Списки</h3>
+            <!-- Стилизация списков -->
+            <ul class="styled-list">
+                <li>Первый пункт</li>
+                <li>Второй пункт</li>
+                <li>Третий пункт</li>
+            </ul>
+            
+            <h3>Таблицы</h3>
+            <!-- Стилизация таблиц -->
+            <table class="styled-table">
+                <tr>
+                    <th>Заголовок 1</th>
+                    <th>Заголовок 2</th>
+                </tr>
+                <tr>
+                    <td>Ячейка 1</td>
+                    <td>Ячейка 2</td>
+                </tr>
+                <tr>
+                    <td>Ячейка 3</td>
+                    <td>Ячейка 4</td>
+                </tr>
+            </table>
+            
+            <h3>Формы</h3>
+            <!-- Стилизация форм -->
+            <form class="simple-form">
+                <input type="text" placeholder="Введите имя">
+                <input type="email" placeholder="Введите email">
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+            
+            <h3>Каскадность</h3>
+            <!-- Демонстрация каскадности CSS -->
+            <p id="cascade-demo" class="cascade-demo" style="color: orange;">Какой цвет применится?</p>
+        </section>
+    </div>
+    
+    <footer class="footer">
+        <p>© 2023 Учебный сайт по CSS</p>
+    </footer>
+</body>
+</html>
