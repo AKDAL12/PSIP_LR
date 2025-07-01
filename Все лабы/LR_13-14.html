@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя Веб-Страница и Регистрация</title>
+    <link rel="stylesheet" href="LR_13-14.css"> </head>
+<body>
+    <div class="container">
+        <p>Максимчик Алексей Владимирович</p>
+        <a href="https://steamdb.info/" id="myFavoriteLink">Мой любимый сайт</a>
+        <img src="часы.png" alt="Любое изображение" class="content-image"> 
+        
+        <hr> <button id="showUrlButton" class="register-button">Посмотреть URL</button>
+        <p id="urlOutput"></p>
+
+        <hr> <div class="registration-form">
+            <h2>РЕГИСТРАЦИЯ</h2>
+
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="account-number">№ лицевого счета *</label>
+                    <input type="text" id="account-number" name="accountNumber">
+                    <span class="error-message" id="accountNumberError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="house-number">Номер дома *</label>
+                    <input type="text" id="house-number" name="houseNumber">
+                    <span class="error-message" id="houseNumberError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="house-letter">Литера дома</label>
+                    <input type="text" id="house-letter" name="houseLetter">
+                    <span class="error-message" id="houseLetterError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="apartment-number">Номер квартиры</label>
+                    <input type="text" id="apartment-number" name="apartmentNumber">
+                    <span class="error-message" id="apartmentNumberError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="apartment-extension">Расширение номера квартиры</label>
+                    <input type="text" id="apartment-extension" name="apartmentExtension">
+                    <span class="error-message" id="apartmentExtensionError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail адрес *</label>
+                    <input type="email" id="email" name="email">
+                    <span class="info-icon" title="Введите ваш адрес электронной почты">?</span>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль *</label>
+                    <input type="password" id="password" name="password">
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="offers" checked>
+                    <label for="offers">Желаю получать супепредложения по акциям компании</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="data-processing">
+                    <label for="data-processing">Принимаю условия обработки данных</label>
+                    <span class="error-message" id="dataProcessingError"></span>
+                </div>
+
+                <button type="submit" class="register-button">Зарегистрироваться</button>
+            </form>
+        </div>
+
+    <script src="LR_13-14.js"></script> </body>
+</html>
